@@ -46,7 +46,7 @@
     height: 500px;
     gap: 100px;
     justify-content: center;
-    margin: 0 20px;
+    margin: 40px 20px 0;
 }
 
 .col1 {
@@ -56,7 +56,10 @@
 
 /* mobile */
 @media only screen and (max-width: 768px) {
+
     .container {
+        display: flex;
+        flex-direction: column;
         width: 100%;
     }
 
@@ -68,18 +71,22 @@
     .nav {
         display: flex;
         flex-direction: column;
-        align-items: left;
+        flex-wrap: wrap;
+        width: 100%;
+        margin-bottom: 200px;
     }
 
     .column {
-        margin-top: 50px;
-        width: 100%;
         display: flex;
         flex-direction: column;
-    }
-
-    /* For mobile phones: */
-    [class*="col-"] {
         width: 100%;
+
     }
 }
+
+/* For mobile phones: */
+/* [class*="col-"] {
+        width: 100%;
+    }
+
+   
