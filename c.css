@@ -1,14 +1,14 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box
+    box-sizing: border-box;
 }
+
 
 .container {
     margin: auto;
     width: 980px;
     text-align: center;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .header {
