@@ -6,59 +6,105 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="c.css">
-    <link rel="stylesheet" href="./lib.css">
-
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
     <style>
+        input {
+            padding: 10px;
+            margin: 10px;
+            border-radius: 10px 10px 10px 10px;
+            -webkit-border-radius: 10px 10px 10px 10px;
+            -moz-border-radius: 10px 10px 10px 10px;
+            outline: none;
+            border: 1px solid #ccc;
+        }
 
+        .button-8 {
+            background-color: #e1ecf4;
+            border-radius: 3px;
+            border: 1px solid #7aa7c7;
+            box-shadow: rgba(255, 255, 255, .7) 0 1px 0 0 inset;
+            box-sizing: border-box;
+            color: #39739d;
+            cursor: pointer;
+            display: inline-block;
+            font-family: -apple-system, system-ui, "Segoe UI", "Liberation Sans", sans-serif;
+            font-size: 13px;
+            font-weight: 400;
+            line-height: 1.15385;
+            margin: 0;
+            outline: none;
+            padding: 8px .8em;
+            position: relative;
+            text-align: center;
+            text-decoration: none;
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+            vertical-align: baseline;
+            white-space: nowrap;
+        }
+
+        .button-8:hover,
+        .button-8:focus {
+            background-color: #b3d3ea;
+            color: #2c5777;
+        }
+
+        .button-8:focus {
+            box-shadow: 0 0 0 4px rgba(0, 149, 255, .15);
+        }
+
+        .button-8:active {
+            background-color: #a0c7e4;
+            box-shadow: none;
+            color: #2c5777;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            max-width: 50%;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .button-8 {
+            max-width: 30%;
+        }
     </style>
+
 </head>
 
 <body>
-    <div class="container pt-5">
-        <div class="row">
-            <div class="header">
-                <h1>Header</h1>
-            </div>
-            <div class="nav">
-                <a href="#" class="a">HTML</a>
-                <a href="#" class="a">CSS</a>
-                <a href="#" class="a">JS</a>
-            </div>
-            <div class="column ">
-                <div class="col1 col-4 ">
-                    <p>
-                        Whats is HTML?
-                        HTML (HyperText Markup Language) is the code that is used to structure a web page and its
-                        content.
-                        For example, content could be structured within a set of paragraphs, a list of bulleted points,
-                        or
-                        using images and data
-                    </p>
-                </div>
-                <div class="col1 col-4 ">
-                    <p>
-                        What is meant by CSS?
-                        Cascading Style Sheets (CSS) is a stylesheet language used to describe the presentation of a
-                        document written in HTML or XML (including XML dialects such as SVG, MathML or XHTML). CSS
-                        describes
-                        how elements should be rendered on screen, on paper, in speech, or on other media.
-                    </p>
-                </div>
-                <div class="col1 col-4   ">
-                    <p>
-                        JavaScript, often abbreviated as JS, is a programming language that is one of the core
-                        technologies
-                        of the World Wide Web, alongside HTML and CSS. As of 2022, 98% of websites use JavaScript on the
-                        client side for webpage behavior, often incorporating third-party libraries.
-                    </p>
-                </div>
-            </div>
-        </div>
-
+    <div class="container">
+        <input type="text" placeholder="nhap so nguyen 1 ..." value="" />
+        <input type="text" placeholder="nhap so nguyen 2 ..." value="" />
+        <input type="text" placeholder="nhap so nguyen 3 ..." value="" />
+        <!-- HTML !-->
+        <button class="button-8" role="button" onclick=handleFind()>Find</button>
     </div>
+    <h1> </h1>
+
 
 </body>
 
-
 </html>
+<script>
+
+    let input = document.querySelectorAll('input')
+    let Result = document.querySelector('h1')
+
+    const handleFind = function () {
+        if (!Number.isInteger(+input[0].value, +input[1].value, +input[2].value)) {
+            alert('nhap so nguyen')
+
+        } else {
+            const maxNumber = Math.max(input[0].value, input[1].value, input[2].value)
+            console.log(maxNumber)
+            Result.innerHTML = `Max:<p>${maxNumber}</p>`
+        }
+
+
+    }
+
+</script>
