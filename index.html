@@ -81,7 +81,7 @@
         <input type="text" placeholder="nhap b ..." value="" />
         <input type="text" placeholder="nhap c ..." value="" />
         <!-- HTML !-->
-        <button class="button-8" role="button" onclick=Find()>Find</button>
+        <button class="button-8" role="button" onclick=handleFind()>Find</button>
     </div>
     <h1> </h1>
 
@@ -94,31 +94,31 @@
     let input = document.querySelectorAll('input')
     let Result = document.querySelector('h1')
 
-    //cau2
-    let result
-    let result2
-    const handleFind = function (a, b, c) {
-        result = (-1 * b + Math.sqrt(Math.pow(b, 2) - (4 * a * c))) / (2 * a);
-        result2 = (-1 * b - Math.sqrt(Math.pow(b, 2) - (4 * a * c))) / (2 * a);
-        return result + " " + "and" + " " + result2;
-    }
-    const Find = function () {
-        if (!(result || result2)) {
-            return Result.innerHTML = 'vo nghiem'
-        }
-        Result.innerHTML = `Nghiem phuong trinh la :<p>${handleFind(+input[0].value, +input[1].value, +input[2].value)}</p>`
-    }
-    // const handleFind = function () {
-    //     if (!Number.isInteger(+input[0].value, +input[1].value, +input[2].value)) {
-    //         alert('nhap so nguyen')
-
-    //     } else {
-    //         const maxNumber = Math.max(input[0].value, input[1].value, input[2].value)
-    //         console.log(maxNumber)
-    //         Result.innerHTML = `Max:<p>${maxNumber}</p>`
-    //     }
-
-
+    // //cau2
+    // let result
+    // let result2
+    // const handleFind = function (a, b, c) {
+    //     result = (-1 * b + Math.sqrt(Math.pow(b, 2) - (4 * a * c))) / (2 * a);
+    //     result2 = (-1 * b - Math.sqrt(Math.pow(b, 2) - (4 * a * c))) / (2 * a);
+    //     return result + " " + "and" + " " + result2;
     // }
+    // const Find = function () {
+    //     if (!(result || result2)) {
+    //         return Result.innerHTML = 'vo nghiem'
+    //     }
+    //     Result.innerHTML = `Nghiem phuong trinh la :<p>${handleFind(+input[0].value, +input[1].value, +input[2].value)}</p>`
+    // }
+    const handleFind = function () {
+        if (!Number.isInteger(+input[0].value, +input[1].value, +input[2].value)) {
+            alert('nhap so nguyen')
+
+        } else {
+            const maxNumber = Math.max(input[0].value, input[1].value, input[2].value)
+            console.log(maxNumber)
+            Result.innerHTML = `Max:<p>${maxNumber}</p>`
+        }
+
+
+    }
 
 </script>
