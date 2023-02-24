@@ -11,18 +11,22 @@
 <body>
 </body>
 <script>
-    let a = parseInt(prompt('nhap a '))
-    let b = parseInt(prompt('nhap b '))
+    do {
+        let a = parseInt(prompt('nhap a '))
+        let b = parseInt(prompt('nhap b '))
 
-    while (a != b) {
-        if (a > b) {
-            a = a - b
+        while (a != b) {
+            if (a > b) {
+                a = a - b
+            }
+            else {
+                b = b - a
+            }
         }
-        else {
-            b = b - a
-        }
-    }
-    alert(a)
+        alert(a)
+    } while (
+        confirm('you want to continue ?') === true
+    )
 </script>
 
 </html>
