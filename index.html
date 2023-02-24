@@ -11,22 +11,27 @@
 <body>
 </body>
 <script>
-    do {
-        let a = parseInt(prompt('nhap a '))
-        let b = parseInt(prompt('nhap b '))
+    // // for(initial state, condition state, change state) {
+    // block code to loop
 
-        while (a != b) {
-            if (a > b) {
-                a = a - b
-            }
-            else {
-                b = b - a
-            }
+    let soNguyen = parseInt((prompt('nhap vao mot so nguyen')))
+    let chiaHet = false
+    for (let i = 2; i < soNguyen; i++) {
+        if (soNguyen % i === 0) {
+            chiaHet = true;
+            break;
+        } else {
+            chiaHet = false
         }
-        alert(a)
-    } while (
-        confirm('you want to continue ?') === true
-    )
+    }
+
+    if (chiaHet === true) {
+        alert('ko pjhai so nguyen to')
+    } else {
+        alert('la so nguyen to')
+    }
+
+
 </script>
 
 </html>
