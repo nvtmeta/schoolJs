@@ -6,119 +6,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
-    <style>
-        input {
-            padding: 10px;
-            margin: 10px;
-            border-radius: 10px 10px 10px 10px;
-            -webkit-border-radius: 10px 10px 10px 10px;
-            -moz-border-radius: 10px 10px 10px 10px;
-            outline: none;
-            border: 1px solid #ccc;
-        }
-
-        .button-8 {
-            background-color: #e1ecf4;
-            border-radius: 3px;
-            border: 1px solid #7aa7c7;
-            box-shadow: rgba(255, 255, 255, .7) 0 1px 0 0 inset;
-            box-sizing: border-box;
-            color: #39739d;
-            cursor: pointer;
-            display: inline-block;
-            font-family: -apple-system, system-ui, "Segoe UI", "Liberation Sans", sans-serif;
-            font-size: 13px;
-            font-weight: 400;
-            line-height: 1.15385;
-            margin: 0;
-            outline: none;
-            padding: 8px .8em;
-            position: relative;
-            text-align: center;
-            text-decoration: none;
-            user-select: none;
-            -webkit-user-select: none;
-            touch-action: manipulation;
-            vertical-align: baseline;
-            white-space: nowrap;
-        }
-
-        .button-8:hover,
-        .button-8:focus {
-            background-color: #b3d3ea;
-            color: #2c5777;
-        }
-
-        .button-8:focus {
-            box-shadow: 0 0 0 4px rgba(0, 149, 255, .15);
-        }
-
-        .button-8:active {
-            background-color: #a0c7e4;
-            box-shadow: none;
-            color: #2c5777;
-        }
-
-        .container {
-            display: flex;
-            flex-direction: column;
-            max-width: 50%;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .button-8 {
-            max-width: 30%;
-        }
-    </style>
-
 </head>
 
 <body>
-    <div class="container">
-        <input type="text" placeholder="nhap a ..." value="" />
-        <input type="text" placeholder="nhap b ..." value="" />
-        <input type="text" placeholder="nhap c ..." value="" />
-        <!-- HTML !-->
-        <button class="button-8" role="button" onclick=handleFind()>Find</button>
-    </div>
-    <h1> </h1>
-
-
 </body>
+<script>
+    let monthValue = parseInt(prompt('Nhap thang', '1'))
+    let YearValue = parseInt(prompt('Nhap name', '2023'))
+    function daysInMonth(month, year) {
+        return new Date(year, month, 0).getDate()
+    }
+    alert('so ngay cua nam do la' + ' ' + daysInMonth(monthValue, YearValue))
+</script>
 
 </html>
-<script>
-
-    let input = document.querySelectorAll('input')
-    let Result = document.querySelector('h1')
-
-    // //cau2
-    // let result
-    // let result2
-    // const handleFind = function (a, b, c) {
-    //     result = (-1 * b + Math.sqrt(Math.pow(b, 2) - (4 * a * c))) / (2 * a);
-    //     result2 = (-1 * b - Math.sqrt(Math.pow(b, 2) - (4 * a * c))) / (2 * a);
-    //     return result + " " + "and" + " " + result2;
-    // }
-    // const Find = function () {
-    //     if (!(result || result2)) {
-    //         return Result.innerHTML = 'vo nghiem'
-    //     }
-    //     Result.innerHTML = `Nghiem phuong trinh la :<p>${handleFind(+input[0].value, +input[1].value, +input[2].value)}</p>`
-    // }
-    const handleFind = function () {
-        if (!Number.isInteger(+input[0].value, +input[1].value, +input[2].value)) {
-            alert('nhap so nguyen')
-
-        } else {
-            const maxNumber = Math.max(input[0].value, input[1].value, input[2].value)
-            console.log(maxNumber)
-            Result.innerHTML = `Max:<p>${maxNumber}</p>`
-        }
-
-
-    }
-
-</script>
