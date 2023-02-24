@@ -25,20 +25,15 @@
         let input = document.getElementById('input').value
         let p = document.getElementsByClassName('paragraph')[0]
         let soNguyen = +input
-        console.log(Number.isInteger(soNguyen))
         let chiaHet = false
         for (let i = 2; i < soNguyen; i++) {
-            if (Number.isInteger(soNguyen)) {
-                if (soNguyen % i === 0) {
-                    chiaHet = true;
-                    break;
-                } else {
-                    chiaHet = false
-                }
+            if (soNguyen % i === 0) {
+                chiaHet = true;
+                break;
+            } else {
+                chiaHet = false
             }
-
         }
-
         if (chiaHet === true) {
             p.innerHTML = `${input} ko phai so nguyen to`
         } else {
