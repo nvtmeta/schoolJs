@@ -12,11 +12,33 @@
 </body>
 <script>
     let monthValue = parseInt(prompt('Nhap thang', '1'))
-    let YearValue = parseInt(prompt('Nhap name', '2023'))
-    function daysInMonth(month, year) {
-        return new Date(year, month, 0).getDate()
+    let YearValue = parseInt(prompt('Nhap nam', '2023'))
+    let numday = 0
+    switch (monthValue) {
+        case 4:
+        case 6:
+        case 9:
+        case 11:
+            numday = 30;
+            break;
+        case 1:
+        case 3:
+        case 5:
+        case 7:
+        case 8:
+        case 10:
+        case 12:
+            numday = 31;
+            break;
+        case 2:
+            if (YearValue % 4 === 0 && YearValue % 100 !== 0 || YearValue % 400 === 0) {
+                numday = 29
+            }
+            else {
+                numday = 28
+            }
     }
-    alert('so ngay cua nam do la' + ' ' + daysInMonth(monthValue, YearValue))
+    alert('so ngay cua thang va nam do la' + ' ' + numday)
 </script>
 
 </html>
