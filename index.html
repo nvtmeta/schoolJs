@@ -9,38 +9,25 @@
 </head>
 
 <body>
-    <input id="input" class="input" type="text" />
-    <button onclick=find()>find</button>
-    <p class="paragraph"></p>
+    <h1 class="" id=""></h1>
+    <h1></h1>
+    <h1></h1>
 </body>
+
+
 <script>
-    // // for(initial state, condition state, change state) {
-    // block code to loop
-    // let soNguyen = parseInt((prompt('nhap vao mot so nguyen')))
-    // getelemtnbyid tra ve the input do nen ko phai la mot arr nhung
-    // getelementbytagname va getelementbyclassname thi la mot arr
+    const headings = document.getElementsByTagName('h1')
+    console.log(headings[1])
 
-
-    function find() {
-        let input = document.getElementById('input').value
-        let p = document.getElementsByClassName('paragraph')[0]
-        let soNguyen = +input
-        let chiaHet = false
-        for (let i = 2; i < soNguyen; i++) {
-            if (soNguyen % i === 0) {
-                chiaHet = true;
-                break;
-            } else {
-                chiaHet = false
-            }
-        }
-        if (chiaHet === true) {
-            p.innerHTML = `${input} ko phai so nguyen to`
-        } else {
-            p.innerHTML = `${input} la so nguyen to`
-        }
+    var i
+    for (i = 0; i < headings.length; i++) {
+        headings[0].innerHTML = 'this is headings'
+        headings[1].innerHTML = 'this i'
+        headings[i].innerHTML = 'this is headings'
     }
 
+
+    headings.innerHTML = "this is headings"
 
 </script>
 
