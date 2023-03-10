@@ -9,25 +9,41 @@
 </head>
 
 <body>
-    <h1 class="" id=""></h1>
-    <h1></h1>
-    <h1></h1>
+    <label for="username">username</label>
+    <input id="username" type="text ">
+    <br />
+    <label for="password">password</label>
+    <input id="password" type="text " value="">
+    <button onclick="login()">Login</button>
 </body>
-
-
 <script>
-    const headings = document.getElementsByTagName('h1')
-    console.log(headings[1])
+    var user = {
+        Username: 'nvt',
+        password: 1234,
+        setInfo: function (Username, password) {
+            this.Username = Username
+            this.password = password
+        },
+        doLogin: function (Username, password) {
+            if (this.Username == Username && this.password == password)
+                return true
+            else {
+                return false
+            }
+        }
+    }
+    function login() {
+        var Username = document.getElementById('username').value
+        var password = document.getElementById('password').value
+        console.log(Username, password)
+        if (user.doLogin(Username, password) == true) {
+            alert('login successfully')
+            window.location = 'index.html'
+        }
+        alert('login failure')
 
-    var i
-    for (i = 0; i < headings.length; i++) {
-        headings[0].innerHTML = 'this is headings'
-        headings[1].innerHTML = 'this i'
-        headings[i].innerHTML = 'this is headings'
     }
 
-
-    headings.innerHTML = "this is headings"
 
 </script>
 
