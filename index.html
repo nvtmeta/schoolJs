@@ -14,37 +14,46 @@
     <br />
     <label for="password">password</label>
     <input id="password" type="text " value="">
-    <button onclick="login()">Login</button>
+    <button onclick="UserLogin()">Login</button>
 </body>
 <script>
-    var user = {
-        Username: 'nvt',
-        password: 1234,
-        setInfo: function (Username, password) {
-            this.Username = Username
-            this.password = password
+
+    let UserData = []
+    let userInitAccount = [
+        {
+            id: 1,
+            userName: 'thinh',
+            password: 1234
         },
-        doLogin: function (Username, password) {
-            if (this.Username == Username && this.password == password)
-                return true
+        {
+            id: 2,
+            userName: 'jack',
+            password: 1234
+        }
+    ]
+    let UserLogin = function () {
+        var userName = document.getElementById('username').value
+        var password = document.getElementById('password').value
+
+        // validation
+        console.log(userName, password)
+
+        const userValidate = userInitAccount.map(account => {
+            if (account.userName == userName && account.password == password)
+                return account
             else {
                 return false
             }
         }
-    }
-    function login() {
-        var Username = document.getElementById('username').value
-        var password = document.getElementById('password').value
-        console.log(Username, password)
-        if (user.doLogin(Username, password) == true) {
-            alert('login successfully')
-            window.location = 'index.html'
+        )
+
+        console.log(userValidate)
+        if (userValidate[0] || userValidate[1]) {
+            alert('ok, you loggin success')
+        } else {
+            alert('cut')
         }
-        alert('login failure')
-
     }
-
-
 </script>
 
 </html>
